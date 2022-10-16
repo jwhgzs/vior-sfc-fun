@@ -1,0 +1,23 @@
+{
+    "name": "vior-sfc-fun",
+    "version": "1.0.0",
+    "description": "",
+    "main": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jwhgzs/vior-sfc-fun.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jwhgzs/vior-sfc-fun/issues"
+    },
+    "homepage": "https://github.com/jwhgzs/vior-sfc-fun#readme",
+    "dependencies": {
+        "vior": "^0.4.17"
+    }
+}

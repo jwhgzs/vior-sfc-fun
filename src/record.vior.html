@@ -1,0 +1,15 @@
+<template>
+    <li>
+        <strong>{{ record }}</strong>
+        |
+        <small>{{ time }}</small>
+        |
+        <slot-receiver></slot-receiver>
+    </li>
+</template>
+
+<script>
+    export default {
+        attrs: ['record', 'time']
+    }
+</script>
