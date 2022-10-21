@@ -6,6 +6,7 @@
             return {
                 pressing: false,
                 status: false,
+                start: 0,
                 timer: 0,
                 interval: null,
                 records: [],
@@ -19,8 +20,9 @@
                 if (! this.vars.status) {
                     let _this = this
                     this.vars.status = true
+                    this.vars.start = Date.now()
                     this.vars.interval = setInterval(() => {
-                        _this.vars.timer += 0.01
+                        _this.vars.timer = (Date.now() - this.vars.start) / 1000
                     }, 10)
                 } else {
                     clearInterval(this.vars.interval)
@@ -31,6 +33,7 @@
                     })
                     this.vars.timer = 0
                     this.vars.status = false
+                    this.vars.start = 0
                 }
             },
             del(i) {
