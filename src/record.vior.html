@@ -1,15 +1,28 @@
 <template>
+    <style $ownstyle>
+        li {
+            list-style-type: none;
+        }
+        .bottom {
+            color: gray;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
     <li>
-        <strong>{{ record }}</strong>
-        |
-        <small>{{ time }}</small>
-        |
-        <slot-receiver></slot-receiver>
+        <h3>{{ record }}</h3>
+        <div class="bottom">
+            <small>{{ time }}</small>
+            <br/>
+            <small>{{ scramble }}</small>
+            <br/>
+            <slot-receiver></slot-receiver>
+        </div>
     </li>
 </template>
 
 <script>
     export default {
-        attrs: ['record', 'time']
+        attrs: ['record', 'time', 'scramble']
     }
 </script>

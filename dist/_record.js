@@ -1,4 +1,4 @@
 
     export default {
-        attrs: ['record', 'time']
+        attrs: ['record', 'time', 'scramble']
     }
