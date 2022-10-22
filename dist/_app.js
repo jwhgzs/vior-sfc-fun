@@ -123,11 +123,15 @@
             mounted() {
                 let _this = this
                 document.onkeydown = (e) => {
-                    _this.vars.pressing = true
+                    if (e.keyCode == 32) {
+                        _this.vars.pressing = true
+                    }
                 }
                 document.onkeyup = (e) => {
-                    _this.vars.pressing = false
-                    _this.funcs.trigger()
+                    if (e.keyCode == 32) {
+                        _this.vars.pressing = false
+                        _this.funcs.trigger()
+                    }
                 }
             }
         },

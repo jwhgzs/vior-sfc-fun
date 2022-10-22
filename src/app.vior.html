@@ -11,7 +11,7 @@
     <center>
         <span style="color: gray" @click="scramble = genScramble()">Scramble: {{ scramble }}</span>
         <h1 :style="{ color: pressing ? 'blue' : 'black' }">{{ timer.toFixed(2) }}</h1>
-        <h3>Press any keys to start or stop the timer.</h3>
+        <h3>Press `Space` to start or stop the timer.</h3>
         <div $if="records.length">
             <ul>
                 <record-item $for="(k, v) in records_reversed" :record="v.record" :time="v.time" :scramble="v.scramble">
@@ -157,11 +157,15 @@
             mounted() {
                 let _this = this
                 document.onkeydown = (e) => {
-                    _this.vars.pressing = true
+                    if (e.keyCode == 32) {
+                        _this.vars.pressing = true
+                    }
                 }
                 document.onkeyup = (e) => {
-                    _this.vars.pressing = false
-                    _this.funcs.trigger()
+                    if (e.keyCode == 32) {
+                        _this.vars.pressing = false
+                        _this.funcs.trigger()
+                    }
                 }
             }
         },
