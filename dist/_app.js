@@ -127,6 +127,7 @@
                 }
                 document.onkeyup = (e) => {
                     _this.vars.pressing = false
+                    _this.funcs.trigger()
                 }
             }
         },
