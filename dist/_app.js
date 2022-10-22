@@ -91,7 +91,7 @@
                     sum -= (max + min)
                 else if (y !== 1)
                     return null
-                return sum / (x - 2)
+                return sum / (y === 0 ? x - 2 : x)
             },
             trigger() {
                 if (! this.vars.status) {
@@ -123,12 +123,12 @@
             mounted() {
                 let _this = this
                 document.onkeydown = (e) => {
-                    if (e.keyCode == 32) {
+                    if (e.keyCode == 17) {
                         _this.vars.pressing = true
                     }
                 }
                 document.onkeyup = (e) => {
-                    if (e.keyCode == 32) {
+                    if (e.keyCode == 17) {
                         _this.vars.pressing = false
                         _this.funcs.trigger()
                     }
