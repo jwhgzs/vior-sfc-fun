@@ -1,4 +1,4 @@
 /node_modules
 /dist
-package-lock.json
-index.html
+/package-lock.json
+/index.html
